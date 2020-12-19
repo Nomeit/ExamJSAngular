@@ -1,0 +1,17 @@
+.alert-danger {
+	padding: 5px;
+	background-color: #F2DEDE;
+	border: 1px solid #EBCCD1;
+	border-radius: 4px;
+	width: 100%;
+}
+
+.form-group {
+	width: 150px;
+}
+input {
+	width: 150px;
+}
+
+input.ng-touched.ng-invalid {border:solid red 2px;}
+input.ng-touched.ng-valid {border:solid green 2px;}

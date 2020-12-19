@@ -1,0 +1,7 @@
+<h2><a routerLink="">Головна</a></h2>
+<h3><a routerLink="/station">Назад</a></h3>
+<h3>{{name}}</h3>
+<p>Є на маршрутах:</p>
+<ul>
+  <li *ngFor="let item of routs; index as id">{{[keys[id]]}} : {{ item }}</li>
+</ul>

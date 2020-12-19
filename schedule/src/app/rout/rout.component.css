@@ -1,0 +1,10 @@
+.global{
+	justify-content: flex-start;
+	display: flex;
+}
+input{
+	margin: 10px;
+}
+h4{
+	margin: 15px;
+}

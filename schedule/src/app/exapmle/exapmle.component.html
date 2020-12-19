@@ -1,0 +1,19 @@
+<form #myForm="ngForm" novalidate (ngSubmit)="onSubmit(myForm)">
+  <div class="form-group">
+      <label>Имя</label>
+      <input class="form-control" name="name" ngModel required />
+  </div>
+  <div class="form-group">
+      <label>Email</label>
+      <input class="form-control" name="email" ngModel 
+          required email />
+  </div>
+  <div class="form-group">
+      <label>Телефон</label>
+      <input class="form-control" name="phone" ngModel 
+          required pattern="[0-9]{10}" />
+  </div>
+  <div class="form-group">
+      <input type="submit" [disabled]="myForm.invalid" class="btn btn-default" value="Отправить" />
+  </div>
+</form>
