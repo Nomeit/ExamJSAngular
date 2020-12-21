@@ -1,0 +1,5 @@
+<h2><a routerLink="">Головна</a></h2>
+<h3><a [routerLink]=[backUrl]>Назад</a></h3>
+<h3>{{station}}</h3>
+<input type="text" value="station"  [(ngModel)]="station"/>
+<button type="submit" (click)="saveEdit()">Зберегти</button>

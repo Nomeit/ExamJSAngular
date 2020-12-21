@@ -17,6 +17,7 @@ import { StationsComponent } from './stations/stations.component';
 import { RoutComponent } from './rout/rout.component';
 import { RoutsComponent } from './routs/routs.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { EditComponent } from './edit/edit.component';
 
 const appRoutes: Routes =[
     { path: 'rout', component: RoutsComponent},
@@ -24,7 +25,7 @@ const appRoutes: Routes =[
     { path: '', component: HomePageComponent },
     { path: 'rout/:id', component: RoutComponent},
     { path: 'station/:id', component: StationComponent},
-    { path: 'station/:id/edit', component: StationComponent},
+    { path: 'station/:id/edit', component: EditComponent},
 ];
 
 @NgModule({
@@ -41,6 +42,7 @@ const appRoutes: Routes =[
     RoutComponent,
     RoutsComponent,
     HomePageComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

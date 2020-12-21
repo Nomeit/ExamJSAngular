@@ -12,6 +12,7 @@ export class StationsComponent implements OnInit {
  
   stations: object = [];
   keys: string[] = [];
+  id: number;
   ngOnInit() {
   	this.http.get('http://localhost:3200/api/station').subscribe((data) => {
         this.stations = Object.keys(data).map(key => (data[key]));
@@ -19,15 +20,11 @@ export class StationsComponent implements OnInit {
         console.log({data});
       });
   }
-  postData(id: number){
-        
-      const body = {id: id, action: "DELETE"};
-      return this.http.delete('http://localhost:3200/api/station', body);
-  }
   delete(id: number){
-    this.postData(id)
+    this.id = id;
+    this.http.delete('http://localhost:3200/api/station', {index: this.id})
               .subscribe(
-                (data: number) => id=data,
+                (data: number) => { this.id; },
                   error => console.log(error)
               );
   }

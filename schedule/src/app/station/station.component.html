@@ -5,4 +5,4 @@
 <ul>
   <li *ngFor="let item of routs; index as id">{{[keys[id]]}} : {{ item }}</li>
 </ul>
-<button><a routerLink="/edit">Редагувати</a></button>
+<button [routerLink]=editUrl>Редагувати</button>

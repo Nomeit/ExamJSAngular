@@ -18,6 +18,7 @@ export class StationComponent implements OnInit {
     id: number;
     routs: string = [];
     keys: object;
+    editUrl: string;
     ngOnInit(){
 
       this.http.get(`http://localhost:3200/api/station/${this.id}`).subscribe((data) => {
@@ -33,6 +34,7 @@ export class StationComponent implements OnInit {
             }
           }
         });
+        this.editUrl = `edit`;
         this.name = data.name;
     });
   }
