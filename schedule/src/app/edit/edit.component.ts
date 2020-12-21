@@ -28,11 +28,18 @@ export class EditComponent implements OnInit {
   saveEdit(){
   	if (this.station == this.station_tmp)
   	{
+      if (this.station.trim() != " ")
+      {
+      alert("ERROR");
+      return;
+      }
+      alert("ERROR");
   		return;
   	}
+    
   	this.station_tmp = this.station;
-  	this.http.put(`http://localhost:3200/api/station/${this.id}/edit`, { id: this.id }).subscribe((data) => {
-  			this.station;},
+  	this.http.put(`http://localhost:3200/api/station/${this.id}`, { id: this.id, name: this.station }).subscribe((data) => {
+  			this.id, this.station;},
   			error => console.log(error)
   		);
   	console.log(this.station);

@@ -1,20 +1,22 @@
 <h2><a routerLink="">Головна</a></h2>
 <h3><a routerLink="/rout">Назад</a></h3>
-<div class="global">
+<div class="globalS">
+	<div class="global">
+		<div>
+			<h3>{{name}}</h3>
+			<ul>
+			  <li *ngFor="let item of stations; index as iTime">{{ item.name }} {{ timeLich[iTime] }}' </li>
+			</ul>
+		</div>
+		<div>
+			<input type="time" value="time" [(ngModel)]="time"/>
+			<button type="submit" (click)="setTime(time)">Підтвердити</button>
+		</div>
+	</div>
 	<div>
-		<h3>{{name}}</h3>
+		<h4>Розклад виїзду з кінцевої:</h4>
 		<ul>
-		  <li *ngFor="let item of stations; index as iTime">{{ item.name }} {{ timeLich[iTime] }}' </li>
+		  <li *ngFor="let item of startTime" (click)="setTime(item)">{{ item }}'</li>
 		</ul>
 	</div>
-	<div>
-		<input type="time" value="time" [(ngModel)]="time"/>
-		<button type="submit" (click)="setTime()">Підтвердити</button>
-	</div>
-</div>
-<div>
-	<h4>Розклад виїзду з кінцевої:</h4>
-	<ul>
-	  <li *ngFor="let item of startTime">{{ item }}' </li>
-	</ul>
 </div>

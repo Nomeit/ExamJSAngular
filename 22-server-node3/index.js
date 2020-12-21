@@ -109,7 +109,6 @@ const requestHandler = (request, response) => {
     response.setHeader('Content-Type', 'application/json');
     if (ursArr[1] === 'api') {
       const action = ursArr[2];
-
       let body = '';
       request.on('data', function (data) {
 
@@ -120,11 +119,12 @@ const requestHandler = (request, response) => {
           request.connection.destroy();
         }
       });
-
+      console.log({body});
       request.on('end', function () {
-        console.log({body});
-        const sendData = JSON.parse(body);
+        console.log(request.method);
         let runAction = null;
+        let sendData = (request.method == 'DELETE')? { id: ursArr[3]}:JSON.parse(body);
+
 
         // use POST
         switch (action) {

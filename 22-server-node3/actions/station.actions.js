@@ -94,7 +94,7 @@ function deleteStation(data, c) {
 
 function editStation(data, c) {
   getStore(function (err, store) {
-
+    console.log({data});
     if (err) {
       console.log(err);
       return;
@@ -104,7 +104,7 @@ function editStation(data, c) {
 
     const { stations } = store;
 
-    stations[id] = { name };
+    stations[id] = { name, id };
 
     saveStore(store, function(err) {
       if (err) {

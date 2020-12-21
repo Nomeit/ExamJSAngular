@@ -66,7 +66,8 @@ export class RoutComponent implements OnInit {
     }
   }
 
-  setTime(){
+  setTime(time){
+    this.time = time;
     if (this.time != this.time_tmp)
     {
       this.time = this.findTime(this.time);

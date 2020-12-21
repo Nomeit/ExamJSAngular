@@ -2,6 +2,10 @@
 	justify-content: flex-start;
 	display: flex;
 }
+.globalS{
+	justify-content: flex-start;
+	display: flex;
+}
 input{
 	margin: 10px;
 }

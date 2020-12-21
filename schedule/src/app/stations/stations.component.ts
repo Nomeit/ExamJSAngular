@@ -22,7 +22,7 @@ export class StationsComponent implements OnInit {
   }
   delete(id: number){
     this.id = id;
-    this.http.delete('http://localhost:3200/api/station', {index: this.id})
+    this.http.delete(`http://localhost:3200/api/station/${this.id}`)
               .subscribe(
                 (data: number) => { this.id; },
                   error => console.log(error)
