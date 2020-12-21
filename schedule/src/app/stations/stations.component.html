@@ -1,4 +1,4 @@
 <h1><a routerLink="">Головна</a></h1>
 <ul>
-  <li *ngFor="let item of stations; index as id"><a [routerLink]="[keys[id]]">{{ item.name }}</a></li>
+  <li *ngFor="let item of stations; index as id"><a [routerLink]="[keys[id]]">{{ item.name }} </a> <button (click)="delete(keys[id])">X</button></li>
 </ul>

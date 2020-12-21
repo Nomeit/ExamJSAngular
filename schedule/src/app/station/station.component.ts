@@ -36,5 +36,4 @@ export class StationComponent implements OnInit {
         this.name = data.name;
     });
   }
-
 }

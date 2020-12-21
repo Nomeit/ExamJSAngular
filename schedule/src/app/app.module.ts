@@ -24,6 +24,7 @@ const appRoutes: Routes =[
     { path: '', component: HomePageComponent },
     { path: 'rout/:id', component: RoutComponent},
     { path: 'station/:id', component: StationComponent},
+    { path: 'station/:id/edit', component: StationComponent},
 ];
 
 @NgModule({

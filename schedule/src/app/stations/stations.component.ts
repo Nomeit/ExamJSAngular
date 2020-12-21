@@ -9,17 +9,26 @@ import { HttpClient} from '@angular/common/http';
 export class StationsComponent implements OnInit {
 
   constructor(private http: HttpClient){}
-
+ 
   stations: object = [];
   keys: string[] = [];
   ngOnInit() {
   	this.http.get('http://localhost:3200/api/station').subscribe((data) => {
-        // this.user = data;
-
         this.stations = Object.keys(data).map(key => (data[key]));
         this.keys = Object.keys(data);
         console.log({data});
       });
   }
-
+  postData(id: number){
+        
+      const body = {id: id, action: "DELETE"};
+      return this.http.delete('http://localhost:3200/api/station', body);
+  }
+  delete(id: number){
+    this.postData(id)
+              .subscribe(
+                (data: number) => id=data,
+                  error => console.log(error)
+              );
+  }
 }
